@@ -25,7 +25,7 @@
   @include button(transparent, transparent);
   border: 1px solid colors.$color-prf;
   &:hover {
-    outline-color: rgba(204, 204, 204, 0.4);
+    outline-color: colors.$color-border;
   }
 }
 

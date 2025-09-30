@@ -8,6 +8,7 @@ html {
   margin: 0;
   padding: 0;
   user-select: none;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -74,7 +75,7 @@ ul {
 }
 
 .txtLogo {
-  font-size: 1em;
+  font-size: 22px;
   & span {
     color: colors.$color-primary;
   }
