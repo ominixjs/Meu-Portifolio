@@ -1,0 +1,34 @@
+@use "colors";
+
+@mixin button($bgc, $colorTransp) {
+  border: 0;
+  background-color: $bgc;
+  color: colors.$color-title;
+  padding: 0.4rem 2rem;
+  font-weight: 400;
+  border-radius: 1rem;
+  letter-spacing: 0.5px;
+  outline: 4px solid transparent;
+
+  transition: outline-color 300ms;
+
+  &:hover {
+    outline-color: $colorTransp;
+  }
+}
+
+.button-primary {
+  @include button(colors.$color-primary, colors.$color-primary-transparent);
+}
+
+.button-secundary {
+  @include button(transparent, transparent);
+  border: 1px solid colors.$color-prf;
+  &:hover {
+    outline-color: rgba(204, 204, 204, 0.4);
+  }
+}
+
+.button-send {
+  @include button(colors.$color-secundary, colors.$color-secundary-transparent);
+}

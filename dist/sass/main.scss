@@ -1,0 +1,81 @@
+@use "colors";
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Poppins:ital,wght@0,300;0,400;1,300;1,400&family=Work+Sans:wght@600&display=swap");
+@import url("https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css");
+
+*,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  font-size: 1em;
+  background-color: colors.$color-bg-primary;
+}
+
+h1,
+h2,
+::after {
+  font-family: "Fira Code", serif;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  color: colors.$color-primary;
+}
+
+h3,
+h4,
+h5 {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+}
+
+h1,
+h3,
+h4,
+h5 {
+  color: colors.$color-title;
+}
+
+p,
+a,
+label,
+input,
+button,
+textarea {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -0.5px;
+  font-weight: 300;
+  color: colors.$color-prf;
+
+  transition: color 300ms;
+}
+
+input,
+textarea {
+  outline: none;
+  transition: border-color 300ms;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.txtLogo {
+  font-size: 1em;
+  & span {
+    color: colors.$color-primary;
+  }
+}
