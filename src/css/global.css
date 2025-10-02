@@ -193,15 +193,18 @@ ul {
 #home .intro p.txtMiniTitle {
   font-size: 20px;
   font-weight: 400;
+  color: #ffffff;
 }
 #home .intro p.txtMiniTitle span {
   color: #ffbd59;
 }
 #home .intro p.txtPro {
   font-size: 24px;
+  color: #ffffff;
 }
 #home .intro p.txtPrf {
-  max-width: 60%;
+  max-width: 80%;
+  font-size: 14px;
 }
 #home .intro button {
   margin-right: 0.5rem;
@@ -220,6 +223,7 @@ ul {
   height: 60%;
   object-fit: cover;
   border-radius: 2rem;
+  outline: 4px solid rgba(79, 83, 119, 0.3);
 }
 #about div.info {
   height: 50%;
@@ -330,6 +334,11 @@ ul {
   height: 300px;
   border: 1px solid #4f5377;
   border-radius: 0.4rem;
+  transition: outline-color 300ms;
+  outline: 4px solid transparent;
+}
+#works .scroll-cards div:hover {
+  outline-color: rgba(79, 83, 119, 0.3);
 }
 #works .scroll-cards div img {
   width: 5rem;
@@ -354,6 +363,7 @@ ul {
   height: 60%;
   object-fit: cover;
   border-radius: 2rem;
+  outline: 4px solid rgba(79, 83, 119, 0.3);
 }
 #contact .info {
   width: 30%;

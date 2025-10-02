@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portifolio</title>
     <link rel="stylesheet" href="src/css/global.css" />
+    <script src="https://unpkg.com/scrollreveal"></script>
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <h1 class="txtLogo">Ominix<span>js</span></h1>
+        <h1 class="txt-logo">Ominix<span>js</span></h1>
         <ul class="list-nav">
           <li><a href="#home">Inicio</a></li>
           <li><a href="#about">Sobre</a></li>
@@ -41,47 +42,68 @@
     <section id="home">
       <div class="intro">
         <p class="txtMiniTitle">Olá, <span>eu sou</span></p>
-        <h2>Carlos Alexandre</h2>
+        <h2 class="title">Carlos Alexandre</h2>
         <p class="txtPro">Desenvolvedor Web</p>
         <br />
 
         <p class="txtPrf">
-          Seja bem vindo ao meu portifólio, desde já você conhecerá alguns de
-          meus trabalhos é estilos que uso como expiração.
+          Seja bem-vindo ao meu portfólio! Aqui você vai conhecer meus projetos
+          e meu jeito de trabalhar com desenvolvimento web, sempre focado em
+          criatividade, organização e soluções eficientes. Sinta-se à vontade
+          para explorar!
         </p>
 
         <br /><br />
         <div>
           <a href="#about">
-            <button type="button" class="button-primary">Ver mais</button>
+            <button type="button" class="button-home button-primary">
+              Ver mais
+            </button>
           </a>
           <a href="#contact">
-            <button type="button" class="button-secundary">Fale comigo</button>
+            <button type="button" class="button-home button-secundary">
+              Fale comigo
+            </button>
           </a>
         </div>
       </div>
     </section>
 
     <section id="about">
-      <img src="assets/img/img_about.jpg" alt="ilustração" />
+      <img src="assets/img/img_about.jpg" alt="ilustração" id="img-show" />
       <div class="info">
-        <h2>Sobre</h2>
-        <h3>Resumo de experiência</h3>
-        <p>
-          Sou um desenvolvedor web iniciante que já criou diversos projetos
-          práticos, focados em sites e aplicações funcionais. Busco sempre
-          desenvolver de forma eficiente, organizada e limpa, aplicando boas
-          práticas de código com HTML, CSS e JavaScript. Tenho interesse
-          constante em aprender novas ferramentas e metodologias para evoluir
-          como profissional e entregar soluções de qualidade.
+        <h2 id="title_about">Sobre</h2>
+        <h3 id="subt_about">Resumo de experiência</h3>
+        <p id="prf_about">
+          Eu gosto muito de trabalhar com HTML, CSS e JavaScript, e também
+          explorar frameworks e bibliotecas que deixam o processo de criação
+          mais dinâmico e interessante. Meu objetivo é crescer cada vez mais
+          como desenvolvedor web, transformando ideias em projetos funcionais,
+          modernos e bem organizados.
+          <br /><br />
+          Cheguei até aqui porque sempre tive curiosidade em aprender e fui
+          atrás de conteúdo de qualidade, acompanhando o trabalho de ótimos
+          desenvolvedores e praticando bastante. Nesse caminho, desenvolvi o
+          hábito de aplicar código limpo, boa estruturação e criatividade nos
+          meus projetos. Além de continuar estudando, também gosto de
+          compartilhar dicas e práticas que realmente fazem diferença no dia a
+          dia da programação.
         </p>
 
-        <h3>Contato</h3>
-        <p>Gostou do meu trabalho, então entre em contato!</p>
-        <a href="#skills">
-          <button type="button" class="button-primary">Ver mais</button>
+        <h3 id="subt_about">Contato</h3>
+        <p id="prf_about">Gostou do meu trabalho, então entre em contato!</p>
+        <a href="#contact" title="entrar em contato">
+          <button type="button" class="button-about button-primary">
+            Fale comigo
+          </button>
         </a>
-        <button type="button" class="button-secundary">Download CV</button>
+        <button
+          type="button"
+          class="button-about button-secundary"
+          title="baixar curriculo"
+        >
+          Download CV
+        </button>
       </div>
     </section>
 
@@ -197,17 +219,22 @@
         <h2>Fale comigo</h2>
         <p>Entre em contato para trabalharmos juntos</p>
 
-        <form action="#" method="get" class="form">
-          <label for="name">Nome</label>
-          <input type="text" name="fullName" id="fullName" />
+        <form
+          action="https://formspree.io/f/meorkepv"
+          method="post"
+          class="form"
+          id="form"
+        >
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" />
           <label for="subject">Assunto</label>
           <input type="text" name="subject" id="subject" />
           <label for="msg">Mensagem</label>
           <textarea name="msg" id="msg"></textarea>
-        </form>
-        <br /><br />
+          <br /><br />
 
-        <button type="button" class="button-send">Enviar</button>
+          <button type="submit" class="button-send">Enviar</button>
+        </form>
       </div>
     </section>
 
@@ -220,6 +247,7 @@
             <li><a href="http://pexels.com" target="_blank">Pexels</a></li>
             <li><a href="http://flaticon.com" target="_blank">Flaticon</a></li>
             <li><a href="http://icons8.com" target="_blank">Icons8</a></li>
+            <li><a href=https://scrollrevealjs.org/">Scrollrevealjs</a></li>
           </ul>
           <ul class="list-nav-footer">
             <h3>Navegação</h3>
@@ -250,8 +278,11 @@
           <a href="http://icons8.com">Icons8</a>,
           <a href="http://flaticon.com">Flaticon</a> e
           <a href="http://pexels.com">Pexels</a>
+          
         </p>
       </div>
     </footer>
+
+    <script src="src/scrollrveal.js"></script>
   </body>
 </html>
