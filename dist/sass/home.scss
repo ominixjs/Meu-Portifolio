@@ -1,5 +1,17 @@
 @use "colors";
 
+$breakpoints: (
+  mobile: 480px,
+  tablet: 768px,
+  desktop: 1024px,
+);
+
+@mixin respond-to($device) {
+  @media (max-width: map-get($breakpoints, $device)) {
+    @content;
+  }
+}
+
 .navbar {
   width: 100%;
   display: flex;
@@ -15,10 +27,10 @@
     display: flex;
     gap: 2rem;
 
-    & li a {
+    li a {
       font-weight: 400;
 
-      &:hover {
+      :hover {
         color: colors.$color-primary;
       }
     }
@@ -28,8 +40,14 @@
     display: flex;
     gap: 1rem;
 
-    & li a {
+    li a {
       font-size: 1.1em;
+    }
+  }
+
+  @include respond-to(mobile) {
+    ul.list-nav {
+      display: none;
     }
   }
 }
@@ -39,6 +57,7 @@
   height: 100vh;
   background-image: url(../../assets/img/bg.jpg);
   background-size: 100%;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +65,7 @@
   position: relative;
   z-index: 1;
 
-  &::after {
+  ::after {
     content: "";
     display: flex;
     position: absolute;
@@ -62,7 +81,7 @@
     );
   }
 
-  & .intro {
+  .intro {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -76,28 +95,54 @@
       letter-spacing: -1px;
     }
 
-    & p.txtMiniTitle {
+    p.txtMiniTitle {
       font-size: 20px;
       font-weight: 400;
       color: colors.$color-title;
 
-      & span {
+      span {
         color: colors.$color-primary;
       }
     }
 
-    & p.txtPro {
+    p.txtPro {
       font-size: 24px;
       color: colors.$color-title;
     }
 
-    & p.txtPrf {
+    p.txtPrf {
       max-width: 80%;
       font-size: 14px;
     }
 
-    & button {
+    button {
       margin-right: 0.5rem;
+    }
+  }
+
+  @include respond-to(mobile) {
+    background-image: none;
+    padding-inline: 2rem;
+
+    .intro {
+      align-items: start;
+      width: 100%;
+      text-align: left;
+      h2 {
+        font-size: 50px;
+      }
+
+      p.txtMiniTitle {
+        font-size: 18px;
+      }
+
+      p.txtPro {
+        font-size: 20px;
+      }
+
+      p.txtPrf {
+        font-size: 16px;
+      }
     }
   }
 }
@@ -111,35 +156,60 @@
   height: 100vh;
   gap: 1rem;
 
-  & img {
+  img {
     height: 60%;
     object-fit: cover;
     border-radius: 2rem;
     outline: 4px solid colors.$color-border-transparent;
   }
 
-  & div.info {
+  div.info {
     height: 50%;
     width: 30%;
 
-    & h2 {
+    h2 {
       font-size: 30px;
       margin-bottom: 1rem;
     }
 
-    & h3 {
+    h3 {
       font-size: 22px;
     }
 
-    & p {
+    p {
       font-size: 14px;
       letter-spacing: 0.5;
       text-align: justify;
       margin-bottom: 2rem;
     }
 
-    & button {
+    button {
       margin-right: 1rem;
+    }
+  }
+
+  @include respond-to(mobile) {
+    flex-direction: column;
+    height: 100%;
+    padding-block: 5rem;
+
+    img {
+      width: 80%;
+      height: auto;
+    }
+
+    div.info {
+      width: 100%;
+      padding-inline: 1rem;
+
+      h2 {
+        text-align: center;
+      }
+
+      .flex-buttons {
+        display: flex;
+        gap: 0.5rem;
+      }
     }
   }
 }
@@ -151,33 +221,34 @@
   background-color: colors.$color-bg-secundary;
   padding-block: 5%;
 
-  & .info {
+  .info {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
 
-    & h2 {
+    h2 {
       font-size: 30px;
     }
 
-    & p {
+    p {
       font-size: 14px;
       max-width: 60%;
     }
   }
 
-  & .scroll-imgs {
+  .scroll-imgs {
     display: flex;
     flex-wrap: nowrap;
     gap: 3rem;
     margin-top: 2rem;
 
-    & div {
+    div {
       width: 120px;
       height: auto;
       position: relative;
-      & img {
+
+      img {
         width: 100%;
         height: 100%;
       }
@@ -195,11 +266,20 @@
         position: absolute;
         bottom: 0;
         right: 0;
+        z-index: 9;
         transform: translate(10%, 10%);
         color: #fff;
         font-size: 12px;
         font-weight: 400;
       }
+    }
+  }
+
+  @include respond-to(mobile) {
+    padding-block: 4rem;
+
+    .scroll-imgs {
+      flex-direction: column;
     }
   }
 }
@@ -210,7 +290,7 @@
   flex-direction: column;
   padding: 5% 20%;
 
-  & .info {
+  .info {
     margin-bottom: 2rem;
 
     display: flex;
@@ -218,22 +298,22 @@
     text-align: center;
     align-items: center;
 
-    & h2 {
+    h2 {
       font-size: 30px;
     }
 
-    & p {
+    p {
       font-size: 14px;
     }
   }
 
-  & .scroll-cards {
+  .scroll-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
 
-    & div {
+    div {
       display: flex;
       flex-direction: column;
       justify-content: end;
@@ -245,18 +325,30 @@
       transition: outline-color 300ms;
       outline: 4px solid transparent;
 
-      &:hover {
+      :hover {
         outline-color: colors.$color-border-transparent;
       }
 
-      & img {
+      img {
         width: 5rem;
         height: 5rem;
         margin-bottom: 1rem;
       }
 
-      & p {
+      p {
         font-size: 14px;
+      }
+    }
+  }
+
+  @include respond-to(mobile) {
+    padding: 2rem;
+
+    .scroll-cards {
+      flex-direction: column;
+
+      div {
+        width: 100%;
       }
     }
   }
@@ -272,32 +364,32 @@
   height: 100vh;
   background-color: colors.$color-bg-secundary;
 
-  & img {
+  img {
     height: 60%;
     object-fit: cover;
     border-radius: 2rem;
     outline: 4px solid colors.$color-border-transparent;
   }
 
-  & .info {
+  .info {
     width: 30%;
 
-    & h2 {
+    h2 {
       font-size: 30px;
     }
 
-    & p {
+    p {
       font-size: 14px;
     }
 
-    & .form {
-      & label {
+    .form {
+      label {
         display: block;
         font-size: 14px;
         margin-top: 1rem;
       }
 
-      & input {
+      input {
         padding: 0.4rem 0.8rem;
         width: 400px;
         border: 1px solid colors.$color-border;
@@ -305,7 +397,7 @@
         border-radius: 0.4rem;
       }
 
-      & textarea {
+      textarea {
         padding: 0.4rem 0.8rem;
         width: 400px;
         max-width: 400px;
@@ -318,10 +410,42 @@
         border-radius: 0.4rem;
       }
 
-      & input,
-      & textarea {
-        &:focus {
+      input,
+      textarea {
+        :focus {
           border-color: #fff;
+        }
+      }
+    }
+  }
+  @include respond-to(mobile) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto;
+    padding: 5rem 2rem;
+
+    img {
+      width: 80%;
+      height: auto;
+    }
+
+    .info {
+      width: 100%;
+
+      h2,
+      p {
+        text-align: center;
+      }
+
+      .form {
+        input,
+        textarea {
+          width: 100%;
+        }
+
+        textarea {
+          max-width: 100%;
+          min-width: 100%;
         }
       }
     }
@@ -332,37 +456,37 @@
   display: flex;
   flex-direction: column;
 
-  & .container {
+  .container {
     display: flex;
     flex-direction: column;
     padding: 3%;
 
-    & h1 {
+    h1 {
       margin-bottom: 2rem;
       font-size: 24px;
     }
 
-    & .flex-list {
+    .flex-list {
       display: flex;
       flex-wrap: nowrap;
       gap: 2rem;
 
-      & ul.list-nav-footer {
-        & h3 {
+      ul.list-nav-footer {
+        h3 {
           font-size: 18px;
         }
 
-        & li a {
+        li a {
           font-size: 14px;
         }
       }
-      & ul.list-social-footer {
-        & li {
+      ul.list-social-footer {
+        li {
           display: inline-flex;
           padding: 0.2rem 0.4rem;
         }
       }
-      & ul li a:hover {
+      ul li a:hover {
         color: colors.$color-primary;
       }
     }
@@ -372,13 +496,13 @@
     padding-block: 0.8rem;
     background-color: colors.$color-primary;
 
-    & p {
+    p {
       text-align: center;
       font-size: 12px;
       font-weight: 400;
       letter-spacing: 0.2px;
       color: colors.$color-bg-primary;
-      & a {
+      a {
         color: colors.$color-bg-primary;
         text-decoration: underline;
         font-weight: 400;

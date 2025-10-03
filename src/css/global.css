@@ -78,40 +78,11 @@ ul {
   color: #ffbd59;
 }
 
-html.sr .navbar,
-html.sr .txtMiniTitle,
-html.sr .title,
-html.sr .txtPro,
-html.sr .txtPrf,
-html.sr .button-home,
-html.sr #img-show,
-html.sr #title_about,
-html.sr #subt_about,
-html.sr #prf_about,
-html.sr .button-about,
-html.sr #title_skills,
-html.sr #prf_skills,
-html.sr .scroll-imgs > div,
-html.sr #title_works,
-html.sr #subt_works,
-html.sr .scroll-cards > div,
-html.sr #img_show,
-html.sr #title_contact,
-html.sr #subt_contact,
-html.sr #form label,
-html.sr #form input,
-html.sr #form textarea,
-html.sr #form button,
-html.sr #footer,
-html.sr .flex-list > ul {
-  visibility: hidden;
-}
-
 .button-primary {
   border: 0;
   background-color: #ffbd59;
   color: #ffffff;
-  padding: 0.4rem 2rem;
+  padding: 0.4rem 1.5rem;
   font-weight: 400;
   border-radius: 1rem;
   letter-spacing: 0.5px;
@@ -126,7 +97,7 @@ html.sr .flex-list > ul {
   border: 0;
   background-color: transparent;
   color: #ffffff;
-  padding: 0.4rem 2rem;
+  padding: 0.4rem 1.5rem;
   font-weight: 400;
   border-radius: 1rem;
   letter-spacing: 0.5px;
@@ -145,7 +116,7 @@ html.sr .flex-list > ul {
   border: 0;
   background-color: #59afff;
   color: #ffffff;
-  padding: 0.4rem 2rem;
+  padding: 0.4rem 1.5rem;
   font-weight: 400;
   border-radius: 1rem;
   letter-spacing: 0.5px;
@@ -174,7 +145,7 @@ html.sr .flex-list > ul {
 .navbar .list-nav li a {
   font-weight: 400;
 }
-.navbar .list-nav li a:hover {
+.navbar .list-nav li a :hover {
   color: #ffbd59;
 }
 .navbar .list-social {
@@ -184,12 +155,18 @@ html.sr .flex-list > ul {
 .navbar .list-social li a {
   font-size: 1.1em;
 }
+@media (max-width: 480px) {
+  .navbar ul.list-nav {
+    display: none;
+  }
+}
 
 #home {
   width: 100%;
   height: 100vh;
   background-image: url(../../assets/img/bg.jpg);
   background-size: 100%;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -197,7 +174,7 @@ html.sr .flex-list > ul {
   position: relative;
   z-index: 1;
 }
-#home::after {
+#home ::after {
   content: "";
   display: flex;
   position: absolute;
@@ -240,6 +217,29 @@ html.sr .flex-list > ul {
 #home .intro button {
   margin-right: 0.5rem;
 }
+@media (max-width: 480px) {
+  #home {
+    background-image: none;
+    padding-inline: 2rem;
+  }
+  #home .intro {
+    align-items: start;
+    width: 100%;
+    text-align: left;
+  }
+  #home .intro h2 {
+    font-size: 50px;
+  }
+  #home .intro p.txtMiniTitle {
+    font-size: 18px;
+  }
+  #home .intro p.txtPro {
+    font-size: 20px;
+  }
+  #home .intro p.txtPrf {
+    font-size: 16px;
+  }
+}
 
 #about {
   display: flex;
@@ -275,6 +275,28 @@ html.sr .flex-list > ul {
 }
 #about div.info button {
   margin-right: 1rem;
+}
+@media (max-width: 480px) {
+  #about {
+    flex-direction: column;
+    height: 100%;
+    padding-block: 5rem;
+  }
+  #about img {
+    width: 80%;
+    height: auto;
+  }
+  #about div.info {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+  #about div.info h2 {
+    text-align: center;
+  }
+  #about div.info .flex-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
 }
 
 #skills {
@@ -325,10 +347,19 @@ html.sr .flex-list > ul {
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 9;
   transform: translate(10%, 10%);
   color: #fff;
   font-size: 12px;
   font-weight: 400;
+}
+@media (max-width: 480px) {
+  #skills {
+    padding-block: 4rem;
+  }
+  #skills .scroll-imgs {
+    flex-direction: column;
+  }
 }
 
 #works {
@@ -368,7 +399,7 @@ html.sr .flex-list > ul {
   transition: outline-color 300ms;
   outline: 4px solid transparent;
 }
-#works .scroll-cards div:hover {
+#works .scroll-cards div :hover {
   outline-color: rgba(79, 83, 119, 0.3);
 }
 #works .scroll-cards div img {
@@ -378,6 +409,17 @@ html.sr .flex-list > ul {
 }
 #works .scroll-cards div p {
   font-size: 14px;
+}
+@media (max-width: 480px) {
+  #works {
+    padding: 2rem;
+  }
+  #works .scroll-cards {
+    flex-direction: column;
+  }
+  #works .scroll-cards div {
+    width: 100%;
+  }
 }
 
 #contact {
@@ -429,8 +471,36 @@ html.sr .flex-list > ul {
   background-color: transparent;
   border-radius: 0.4rem;
 }
-#contact .info .form input:focus, #contact .info .form textarea:focus {
+#contact .info .form input :focus,
+#contact .info .form textarea :focus {
   border-color: #fff;
+}
+@media (max-width: 480px) {
+  #contact {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto;
+    padding: 5rem 2rem;
+  }
+  #contact img {
+    width: 80%;
+    height: auto;
+  }
+  #contact .info {
+    width: 100%;
+  }
+  #contact .info h2,
+  #contact .info p {
+    text-align: center;
+  }
+  #contact .info .form input,
+  #contact .info .form textarea {
+    width: 100%;
+  }
+  #contact .info .form textarea {
+    max-width: 100%;
+    min-width: 100%;
+  }
 }
 
 #footer {

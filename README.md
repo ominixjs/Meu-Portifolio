@@ -27,3 +27,4 @@ Veja o arquivo [LICENSE](./LICENSE) para mais informações.
 - [Pexels.com](http://pexels.com)
 - [flaticon.com](http://flaticon.com)
 - [icons8.com](http://icons8.com)
+- [ScrollRevealJs.org](http://scrollrevealjs.org)
