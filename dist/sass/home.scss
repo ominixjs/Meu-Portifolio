@@ -30,7 +30,7 @@ $breakpoints: (
     li a {
       font-weight: 400;
 
-      :hover {
+      &:hover {
         color: colors.$color-primary;
       }
     }
@@ -65,7 +65,7 @@ $breakpoints: (
   position: relative;
   z-index: 1;
 
-  ::after {
+  &::after {
     content: "";
     display: flex;
     position: absolute;
@@ -325,7 +325,7 @@ $breakpoints: (
       transition: outline-color 300ms;
       outline: 4px solid transparent;
 
-      :hover {
+      &:hover {
         outline-color: colors.$color-border-transparent;
       }
 
@@ -486,7 +486,7 @@ $breakpoints: (
           padding: 0.2rem 0.4rem;
         }
       }
-      ul li a:hover {
+      ul li a&:hover {
         color: colors.$color-primary;
       }
     }
