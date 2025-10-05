@@ -81,34 +81,34 @@ ul {
   }
 }
 
-// html.sr {
-//   // todos os elementos revelados iniciam escondidos
-//   .navbar,
-//   .txtMiniTitle,
-//   .title,
-//   .txtPro,
-//   .txtPrf,
-//   .button-home,
-//   #img-show,
-//   #title_about,
-//   #subt_about,
-//   #prf_about,
-//   .button-about,
-//   #title_skills,
-//   #prf_skills,
-//   .scroll-imgs > div,
-//   #title_works,
-//   #subt_works,
-//   .scroll-cards > div,
-//   #img_show,
-//   #title_contact,
-//   #subt_contact,
-//   #form label,
-//   #form input,
-//   #form textarea,
-//   #form button,
-//   #footer,
-//   .flex-list > ul {
-//     visibility: hidden;
-//   }
-// }
+html.sr {
+  // todos os elementos revelados iniciam escondidos
+  .navbar,
+  .txtMiniTitle,
+  .title,
+  .txtPro,
+  .txtPrf,
+  .button-home,
+  #img-show,
+  #title_about,
+  #subt_about,
+  #prf_about,
+  .button-about,
+  #title_skills,
+  #prf_skills,
+  .scroll-imgs > div,
+  #title_works,
+  #subt_works,
+  .scroll-cards > div,
+  #img_show,
+  #title_contact,
+  #subt_contact,
+  #form label,
+  #form input,
+  #form textarea,
+  #form button,
+  #footer,
+  .flex-list > ul {
+    visibility: hidden;
+  }
+}

@@ -12,6 +12,12 @@ $breakpoints: (
   }
 }
 
+body {
+  @include respond-to(mobile) {
+    font-size: 1.1em;
+  }
+}
+
 .navbar {
   width: 100%;
   display: flex;
@@ -128,20 +134,21 @@ $breakpoints: (
       align-items: start;
       width: 100%;
       text-align: left;
+
       h2 {
-        font-size: 50px;
+        font-size: 70px;
       }
 
       p.txtMiniTitle {
-        font-size: 18px;
-      }
-
-      p.txtPro {
         font-size: 20px;
       }
 
+      p.txtPro {
+        font-size: 24px;
+      }
+
       p.txtPrf {
-        font-size: 16px;
+        font-size: 1em;
       }
     }
   }
@@ -203,6 +210,7 @@ $breakpoints: (
       padding-inline: 1rem;
 
       h2 {
+        font-size: 40px;
         text-align: center;
       }
 
@@ -441,6 +449,7 @@ $breakpoints: (
         input,
         textarea {
           width: 100%;
+          padding-block: 0.6rem;
         }
 
         textarea {

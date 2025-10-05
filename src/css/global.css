@@ -78,6 +78,35 @@ ul {
   color: #ffbd59;
 }
 
+html.sr .navbar,
+html.sr .txtMiniTitle,
+html.sr .title,
+html.sr .txtPro,
+html.sr .txtPrf,
+html.sr .button-home,
+html.sr #img-show,
+html.sr #title_about,
+html.sr #subt_about,
+html.sr #prf_about,
+html.sr .button-about,
+html.sr #title_skills,
+html.sr #prf_skills,
+html.sr .scroll-imgs > div,
+html.sr #title_works,
+html.sr #subt_works,
+html.sr .scroll-cards > div,
+html.sr #img_show,
+html.sr #title_contact,
+html.sr #subt_contact,
+html.sr #form label,
+html.sr #form input,
+html.sr #form textarea,
+html.sr #form button,
+html.sr #footer,
+html.sr .flex-list > ul {
+  visibility: hidden;
+}
+
 .button-primary {
   border: 0;
   background-color: #ffbd59;
@@ -125,6 +154,12 @@ ul {
 }
 .button-send:hover {
   outline-color: rgba(89, 175, 255, 0.4);
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 1.1em;
+  }
 }
 
 .navbar {
@@ -228,16 +263,16 @@ ul {
     text-align: left;
   }
   #home .intro h2 {
-    font-size: 50px;
+    font-size: 70px;
   }
   #home .intro p.txtMiniTitle {
-    font-size: 18px;
-  }
-  #home .intro p.txtPro {
     font-size: 20px;
   }
+  #home .intro p.txtPro {
+    font-size: 24px;
+  }
   #home .intro p.txtPrf {
-    font-size: 16px;
+    font-size: 1em;
   }
 }
 
@@ -291,6 +326,7 @@ ul {
     padding-inline: 1rem;
   }
   #about div.info h2 {
+    font-size: 40px;
     text-align: center;
   }
   #about div.info .flex-buttons {
@@ -496,6 +532,7 @@ ul {
   #contact .info .form input,
   #contact .info .form textarea {
     width: 100%;
+    padding-block: 0.6rem;
   }
   #contact .info .form textarea {
     max-width: 100%;
