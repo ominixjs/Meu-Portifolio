@@ -580,7 +580,7 @@ body {
   @include respond-to(mobile) {
     .container {
       padding: 10% 2rem;
-      
+
       .flex-list {
         flex-wrap: wrap;
 

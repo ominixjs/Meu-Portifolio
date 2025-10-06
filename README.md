@@ -15,6 +15,7 @@ Projeto idealizado nas experiências até agora, usando estilos com cores fortes
 - Sobre
 - Habilidades
 - Serviço
+- Projetos
 - Contato
 
 ## 📜 Licença
